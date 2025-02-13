@@ -1,0 +1,96 @@
+---
+title: "Lists - In Class Exercises"
+author: "Claudia Dominguez"
+date: "DATA 2401"
+output: "html_document"
+
+---
+
+# Exercises: 
+
+Make a list that contains the information on a single playing card. Suit, face, and value. 
+
+```{r}
+playing_card <- list(
+  suit = "Hearts",      
+  face = "King",        
+  value = 10            
+)
+
+print(playing_card)
+
+cat("Suit:", playing_card$suit, "\n")
+cat("Face:", playing_card$face, "\n")
+cat("Value:", playing_card$value, "\n")
+
+
+```
+
+
+Make a second list where each element contains all the options for suit, face, and value, respectively. 
+
+```{r}
+card_options <- list(
+  suit = c("Hearts", "Diamonds", "Clubs", "Spades"),
+  face = c("Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"),
+  value = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10)  
+)
+
+print(card_options)
+
+cat("All suits:", paste(card_options$suit, collapse = ", "), "\n")
+cat("All faces:", paste(card_options$face, collapse = ", "), "\n")
+cat("All values:", paste(card_options$value, collapse = ", "), "\n")
+
+
+```
+
+
+If `Newlist <- list(a=1:10, b="Good morning", c="Hi")`, write an R statement that will add 1 to each element of the first vector in Newlist.
+
+```{r}
+Newlist <- list(a = 1:10, b = "Good morning", c = "Hi")
+Newlist$a <- Newlist$a + 1
+
+cat("Vector a:", Newlist$a, "\n")
+cat("Element b:", Newlist$b, "\n")
+cat("Element c:", Newlist$c, "\n")
+
+Newlist$d <- c("Hello", "World")
+
+cat("\nUpdated Newlist:\n")
+print(Newlist)
+
+Newlist$b <- NULL
+
+cat("\nFinal Newlist after removing b:\n")
+print(Newlist)
+
+
+```
+
+If `b <- list(a=1:10, c="Hello", d="AA")`, write an R expression that will give all elements of the first vector of b, except the second, and write another that returns only elements of `a` that are greater than 7.
+
+```{r}
+b <- list(a = 1:10, c = "Hello", d = "AA")
+
+cat("Elements of a except the second:\n")
+print(b$a[-2])
+
+cat("\nElements of a greater than 7:\n")
+print(b$a[b$a > 7])
+
+
+```
+
+Let `x <- list(a=5:10, c="Hello", d="AA")`, write an R statement to add a new item z = "NewItem" to the list x.
+
+```{r}
+x <- list(a = 5:10, c = "Hello", d = "AA")
+
+x$z <- "NewItem"
+
+print(x)
+
+
+```
